@@ -3,11 +3,12 @@ import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { BiMenu } from "react-icons/bi";
 import { CgClose } from "react-icons/cg";
+import { mobileLinks } from "./Links";
+import Link from "next/link";
 
 const MobileMenu = () => {
   const path = usePathname();
   const [open, setOpen] = useState(true);
-  console.log(path);
 
   return (
     <div className="md:hidden">
@@ -24,74 +25,22 @@ const MobileMenu = () => {
           className="absolute top-3 right-3 text-4xl cursor-pointer"
           onClick={() => setOpen(false)}
         />
-        <div className="h-[90%] flex flex-col justify-center">
-          <ul className="px-5 flex flex-col justify-center gap-5 py-5 text-lg">
-            <a href="#" className={`${path === "/" && "navAfterLine"}`}>
-              Home
-            </a>
-            <a
-              href="#"
-              className={`${path === "/cara-order" && "navAfterLine"}`}
-            >
-              Cara Order
-            </a>
-            <a href="#" className={`${path === "/tersedia" && "navAfterLine"}`}>
-              Tersedia
-            </a>
-            <a
-              href="#"
-              className={`${path === "/gecko-baru" && "navAfterLine"}`}
-            >
-              Gecko Baru?
-            </a>
-            <a
-              href="#"
-              className={`${
-                path === "/tentang-kami/perawatan" && "navAfterLine"
-              }`}
-            >
-              Perawatan
-            </a>
-            <a
-              href="#"
-              className={`${
-                path === "/tentang-kami/genetik-resesif" && "navAfterLine"
-              }`}
-            >
-              Genetik Resesif
-            </a>
-            <a
-              href="#"
-              className={`${
-                path === "/tentang-kami/pattern" && "navAfterLine"
-              }`}
-            >
-              Pattern
-            </a>
-            <a
-              href="#"
-              className={`${
-                path === "/tentang-kami/line-albino" && "navAfterLine"
-              }`}
-            >
-              Line Albino
-            </a>
-            <a
-              href="#"
-              className={`${
-                path === "/tentang-kami/kelamin" && "navAfterLine"
-              }`}
-            >
-              Kelamin
-            </a>
-            <a
-              href="#"
-              className={`${
-                path === "/tentang-kami/penyakit" && "navAfterLine"
-              }`}
-            >
-              Penyakit
-            </a>
+        <div className="hideScrollbar h-[100%] flex flex-col justify-center overflow-y-auto pt-5">
+          <ul className="p-5 flex flex-col justify-center gap-4 text-lg">
+            {mobileLinks.map((e) => (
+              <Link
+                onClick={() => setOpen(false)}
+                key={e.path}
+                href={e.path}
+                className={`${
+                  path === e.path
+                    ? "navAfterLinePrimary"
+                    : "navAfterLineHoverPrimary"
+                }`}
+              >
+                {e.label}
+              </Link>
+            ))}
           </ul>
         </div>
       </div>

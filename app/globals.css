@@ -51,8 +51,15 @@
   font-style: normal;
 }
 
+html {
+  scrollbar-color: #ffb823 #2d4f2b;
+}
+
 body {
   @apply text-white font-helvetica overflow-x-hidden bg-background;
+}
+.hideScrollbar {
+  scrollbar-width: none;
 }
 
 .navAfterLinePrimary {
@@ -73,11 +80,11 @@ body {
   content: "";
 }
 
-.navAfterLineHover {
+.navAfterLineHoverAccent {
   @apply relative w-fit transition-all;
 }
 
-.navAfterLineHover::before {
+.navAfterLineHoverAccent::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -90,6 +97,28 @@ body {
   transition: width 300ms ease; /* Animate width only */
 }
 
-.navAfterLineHover:hover::before {
+.navAfterLineHoverAccent:hover::before {
+  width: 110%;
+}
+.navAfterLineHoverPrimary {
+  @apply relative w-fit transition-all;
+}
+
+.navAfterLineHoverPrimary::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0%; /* Start with no width */
+  background-color: theme(
+    "colors.primary"
+  ); /* Use your Tailwind config color */
+  border-radius: 9999px;
+  transition: width 300ms ease; /* Animate width only */
+}
+
+.navAfterLineHoverPrimary:hover::before {
   width: 110%;
 }

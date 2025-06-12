@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navbar from "@/component/Navbar/Navbar";
+import Footer from "@/component/UI/Footer";
+import { FaWhatsapp } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +21,19 @@ export default function RootLayout({
       </head>
       <body>
         <Navbar />
-        <div className="pt-20">{children}</div>
+        <div className="pt-20 pb-10 min-h-[95dvh]">{children}</div>
+        <Footer />
+        <a
+          href="https://wa.me/6285163608850"
+          className="fixed bottom-5 right-0 group"
+        >
+          <div className="bg-primary rounded-tl-full h-15 rounded-bl-full flex justify-center gap-2 items-center pl-4 py-1">
+            <FaWhatsapp className="z-10 rounded-full text-4xl overflow-visible" />
+            <p className="w-0 group-hover:w-25 font-bold font-helvetica text-nowrap transition-all">
+              Chat Saya!
+            </p>
+          </div>
+        </a>
       </body>
     </html>
   );
