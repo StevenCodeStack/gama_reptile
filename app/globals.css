@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-primary: #2d4f2b;
+  --color-secondary: #708a58;
+  --color-accent: #ffb823;
+  --color-background: #fff1ca;
+
+  --font-cocogoose: "Cocogoose";
+  --font-coolvetica: "Coolvetica";
+  --font-helvetica: "Helvetica";
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: "Cocogoose";
+  src: url("/fonts/cocogoose/Cocogoose-Pro-Regular-trial.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cocogoose";
+  src: url("/fonts/cocogoose/Cocogoose-Pro-Bold-trial.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Cocogoose";
+  src: url("/fonts/cocogoose/Cocogoose-Pro-Thin-trial.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: "Coolvetica";
+  src: url("/fonts/coolvetica/coolvetica rg.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/helvetica/Helvetica-Bold.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("/fonts/helvetica/Helvetica.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply text-white font-helvetica overflow-x-hidden bg-background;
+}
+
+.navAfterLinePrimary {
+  @apply font-semibold relative w-fit transition-all;
+}
+
+.navAfterLinePrimary::before {
+  @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-[110%] h-[2px] bg-primary rounded-2xl;
+  content: "";
+}
+
+.navAfterLineAccent {
+  @apply font-semibold relative w-fit transition-all;
+}
+
+.navAfterLineAccent::before {
+  @apply absolute bottom-0 left-1/2 -translate-x-1/2 w-[110%] h-[2px] bg-accent rounded-2xl;
+  content: "";
+}
+
+.navAfterLineHover {
+  @apply relative w-fit transition-all;
+}
+
+.navAfterLineHover::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 0%; /* Start with no width */
+  background-color: theme("colors.accent"); /* Use your Tailwind config color */
+  border-radius: 9999px;
+  transition: width 300ms ease; /* Animate width only */
+}
+
+.navAfterLineHover:hover::before {
+  width: 110%;
 }
