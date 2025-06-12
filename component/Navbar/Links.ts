@@ -15,8 +15,8 @@ export const mobileLinks = [
     label: "Home",
     icon: FaHome,
   },
-  { path: "/cara-order", label: "Cara Order", icon: FaReceipt },
-  { path: "/tersedia", label: "Tersedia", icon: FaBoxOpen },
+  { path: "/order/cara-order", label: "Cara Order", icon: FaReceipt },
+  { path: "/order/tersedia", label: "Tersedia", icon: FaBoxOpen },
   {
     path: "/gecko-baru",
     label: "Gecko Baru?",
@@ -56,32 +56,32 @@ export const mobileLinks = [
 
 export const TentangGeckoLinks = [
   {
-    path: "/perawatan",
+    path: "/tentang-gecko/perawatan",
     label: "Perawatan",
     icon: GiHealthNormal,
   },
   {
-    path: "/genetik-resesif",
+    path: "/tentang-gecko/genetik-resesif",
     label: "Genetik Resesif",
     icon: SiMicrogenetics,
   },
   {
-    path: "/pattern",
+    path: "/tentang-gecko/pattern",
     label: "Pattern",
     icon: GiGearStickPattern,
   },
   {
-    path: "/line-albino",
+    path: "/tentang-gecko/line-albino",
     label: "Line Albino",
     icon: GiDna2,
   },
   {
-    path: "/kelamin",
+    path: "/tentang-gecko/kelamin",
     label: "Kelamin",
     icon: FaVenusMars,
   },
   {
-    path: "/penyakit",
+    path: "/tentang-gecko/penyakit",
     label: "Penyakit",
     icon: FaNotesMedical,
   },

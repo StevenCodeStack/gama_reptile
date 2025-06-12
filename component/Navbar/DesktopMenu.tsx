@@ -22,7 +22,7 @@ const DesktopMenu = () => {
       </Link>
       <div className="flex group items-center gap-1 cursor-pointer h-full">
         <FaShoppingCart /> Order <MdArrowDropDown />
-        <div className="absolute py-2 px-5 border-2 bg-white border-black rounded top-8 opacity-0 hidden group-hover:opacity-100 group-hover:top-15 group-hover:block transition-all">
+        <div className="absolute py-2 px-5 border-2 bg-white border-primary rounded top-8 opacity-0 hidden group-hover:opacity-100 group-hover:top-15 group-hover:block transition-all">
           <ul className="text-black text-nowrap flex flex-col gap-2">
             {orderLinks.map((e) => (
               <Link
@@ -34,7 +34,7 @@ const DesktopMenu = () => {
                     : "navAfterLineHoverAccent"
                 } flex items-center gap-2`}
               >
-                <e.icon /> {e.label}
+                <e.icon className="text-accent" /> {e.label}
               </Link>
             ))}
           </ul>
@@ -52,19 +52,19 @@ const DesktopMenu = () => {
       </Link>
       <div className="flex group items-center gap-1 relative h-full ">
         <GiGecko /> Tentang Gecko <MdArrowDropDown />
-        <div className="absolute py-2 px-5 border-2 bg-white border-black rounded top-8 opacity-0 hidden group-hover:opacity-100 group-hover:top-15 group-hover:block transition-all">
+        <div className="absolute py-2 px-5 border-2 bg-white border-primary rounded top-8 opacity-0 hidden group-hover:opacity-100 group-hover:top-15 group-hover:block transition-all">
           <ul className="text-black text-nowrap flex flex-col gap-2">
             {TentangGeckoLinks.map((e) => (
               <Link
                 key={e.path}
-                href={`/tentang-gecko/${e.path}`}
+                href={e.path}
                 className={`${
                   path === e.path
                     ? "navAfterLineAccent"
                     : "navAfterLineHoverAccent"
                 } flex items-center gap-2`}
               >
-                <e.icon /> {e.label}
+                <e.icon className="text-accent" /> {e.label}
               </Link>
             ))}
           </ul>

@@ -11,11 +11,11 @@ const page = () => {
         <ul className="list-decimal text-black md:text-lg lg:text-xl lg:py-5 md:px-5">
           <li>
             Pastikan membuka paket dengan video unboxing no cut no eituntuk
-            klaim garansi
+            klaim garansi.
           </li>
           <li>
             Setelah gecko kalian aman, siapkan kendang untuk tempat tinggal
-            leopard gecko kalian
+            leopard gecko kalian.
           </li>
           <li>
             Jangan mainkan dan beri makan leopard gecko kalian setelah sampai,
@@ -23,7 +23,7 @@ const page = () => {
           </li>
           <li>
             Setelah 2-3 hari, leopard gecko kesayangan kalian sudah bisa
-            dimainkan ataupun diberi makan
+            dimainkan ataupun diberi makan.
           </li>
         </ul>
       </div>
