@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const MobileMenu = () => {
   const path = usePathname();
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <div className="md:hidden">
@@ -19,7 +19,7 @@ const MobileMenu = () => {
       <div
         className={`${
           open ? "right-0" : "right-[-100%]"
-        } absolute top-0 bg-accent h-[100dvh] w-[60dvw] transition-all border-4 border-primary`}
+        } absolute top-0 bg-accent h-fit max-h-[100dvh] w-[60dvw] transition-all border-4 border-primary`}
       >
         <CgClose
           className="absolute top-3 right-3 text-4xl cursor-pointer"
@@ -38,7 +38,10 @@ const MobileMenu = () => {
                     : "navAfterLineHoverPrimary"
                 }`}
               >
-                {e.label}
+                <div className="flex items-center gap-2 text-primary">
+                  <e.icon className="" />
+                  {e.label}
+                </div>
               </Link>
             ))}
           </ul>

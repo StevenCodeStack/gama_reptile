@@ -18,10 +18,10 @@ const DesktopMenu = () => {
           path === "/" ? "navAfterLineAccent" : "navAfterLineHoverAccent"
         } flex items-center gap-1 cursor-pointer h-fit`}
       >
-        <AiFillHome /> Home
+        <AiFillHome className="text-accent" /> Home
       </Link>
       <div className="flex group items-center gap-1 cursor-pointer h-full">
-        <FaShoppingCart /> Order <MdArrowDropDown />
+        <FaShoppingCart className="text-accent" /> Order <MdArrowDropDown />
         <div className="absolute py-2 px-5 border-2 bg-white border-primary rounded top-8 opacity-0 hidden group-hover:opacity-100 group-hover:top-15 group-hover:block transition-all">
           <ul className="text-black text-nowrap flex flex-col gap-2">
             {orderLinks.map((e) => (
@@ -48,10 +48,10 @@ const DesktopMenu = () => {
             : "navAfterLineHoverAccent"
         } flex items-center gap-1 cursor-pointer h-fit`}
       >
-        <AiOutlineInfoCircle /> Gecko Baru?
+        <AiOutlineInfoCircle className="text-accent" /> Gecko Baru?
       </Link>
       <div className="flex group items-center gap-1 relative h-full ">
-        <GiGecko /> Tentang Gecko <MdArrowDropDown />
+        <GiGecko className="text-accent" /> Tentang Gecko <MdArrowDropDown />
         <div className="absolute py-2 px-5 border-2 bg-white border-primary rounded top-8 opacity-0 hidden group-hover:opacity-100 group-hover:top-15 group-hover:block transition-all">
           <ul className="text-black text-nowrap flex flex-col gap-2">
             {TentangGeckoLinks.map((e) => (
@@ -71,7 +71,7 @@ const DesktopMenu = () => {
         </div>
       </div>
       <div className="flex items-center gap-1 cursor-pointer navAfterLineHoverAccent h-fit">
-        <AiFillPhone /> Kontak
+        <AiFillPhone className="text-accent" /> Kontak
       </div>
     </div>
   );
