@@ -88,6 +88,6 @@ export const TentangGeckoLinks = [
 ];
 
 export const orderLinks = [
-  { path: "/cara-order", label: "Cara Order", icon: FaReceipt },
-  { path: "/tersedia", label: "Tersedia", icon: FaBoxOpen },
+  { path: "/order/cara-order", label: "Cara Order", icon: FaReceipt },
+  { path: "/order/tersedia", label: "Tersedia", icon: FaBoxOpen },
 ];

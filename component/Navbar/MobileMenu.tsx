@@ -19,14 +19,14 @@ const MobileMenu = () => {
       <div
         className={`${
           open ? "right-0" : "right-[-100%]"
-        } absolute top-0 bg-accent h-fit max-h-[100dvh] w-[60dvw] transition-all border-4 border-primary`}
+        } absolute top-0 bg-accent h-[100dvh] w-[60dvw] transition-all border-4 border-primary`}
       >
         <CgClose
           className="absolute top-3 right-3 text-4xl cursor-pointer"
           onClick={() => setOpen(false)}
         />
-        <div className="hideScrollbar h-[100%] flex flex-col justify-center overflow-y-auto pt-5">
-          <ul className="p-5 flex flex-col justify-center gap-4 text-lg">
+        <div className="hideScrollbar h-[100%] flex flex-col justify-center overflow-y-auto pt-5 py-10">
+          <ul className="p-5 flex flex-col justify-center gap-6 text-lg">
             {mobileLinks.map((e) => (
               <Link
                 onClick={() => setOpen(false)}
@@ -39,8 +39,8 @@ const MobileMenu = () => {
                 }`}
               >
                 <div className="flex items-center gap-2 text-primary">
-                  <e.icon className="" />
-                  {e.label}
+                  <e.icon className="text-3xl" />
+                  <span className="text-xl">{e.label}</span>
                 </div>
               </Link>
             ))}

@@ -27,7 +27,7 @@ const DesktopMenu = () => {
             {orderLinks.map((e) => (
               <Link
                 key={e.path}
-                href={`/tentang-gecko/${e.path}`}
+                href={`${e.path}`}
                 className={`${
                   path === e.path
                     ? "navAfterLineAccent"

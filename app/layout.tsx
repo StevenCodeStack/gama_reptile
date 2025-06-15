@@ -21,7 +21,9 @@ export default function RootLayout({
       </head>
       <body>
         <Navbar />
-        <div className="pt-20 pb-10 min-h-[95dvh]">{children}</div>
+        <div className="pt-25 pb-10 min-h-[95dvh] px-5 md:px-10 xl:px-40">
+          {children}
+        </div>
         <Footer />
         <a
           href="https://wa.me/6285163608850"

@@ -20,7 +20,7 @@ const perawatanData = [
 
 const page = () => {
   return (
-    <div className="pt-5 px-5 md:px-10 xl:px-40">
+    <div className="">
       <h1 className="text-center w-fit tracking-widest mx-auto bg-primary font-coolvetica font-bold px-10 py-3 text-xl text-nowrap md:text-4xl rounded-2xl">
         PERAWATAN LEOPARD GECKO
       </h1>
